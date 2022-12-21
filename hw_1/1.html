@@ -21,16 +21,16 @@
 -->
 <script>
   "use strict";
-    let uDataC = NaN;
-    let check = false;
-    do {
-      uDataC = Number(prompt("Введите температуру в градусах Цельсия (десятичные дроби - через точку):"));
-      check = isNaN(uDataC);
-      } while (check); 
-    const uDataF = (9/5) * uDataC + 32;
-    const msg = `Цельсий: ${uDataC}, Фаренгейт: ${uDataF}`;
-    alert(msg);
-    console.log(msg);
+  
+  let userDataCelcius = null;
+  do {
+    userDataCelcius = Number(prompt("Введите температуру в градусах " + 
+    "Цельсия(десятичные дроби - через точку):"));
+      } while (Number.isNaN(userDataCelcius)); 
+  const userDataFahrenheit = (9/5) * userDataCelcius + 32;
+  alert(`Цельсий: ${userDataCelcius}, ` + 
+  `Фаренгейт: ${Math.round((userDataFahrenheit)*100)/100}`);
+ 
 </script>
 </body>
 </html>

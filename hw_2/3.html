@@ -24,18 +24,19 @@
   let a, b;
   do {
     a = Number(prompt('Введите первое число'));
-    } while (Number.isNaN(a));
+  } while (Number.isNaN(a));
   do {
     b = Number(prompt('Введите второе число'));
-    } while (Number.isNaN(b));
+  } while (Number.isNaN(b));
   
-  if (a && b) {
-    console.log(`Разность "a" и "b": ${(a - b)}`);
-  } else if ((a < 0) && (b < 0)) {
-    console.log(`Произведение "a" и "b": ${(a * b)}`);
-  } else if ((a * b) < 0) {
-    console.log(`Сумма "a" и "b": ${(a + b)}`);
+  if (a >0 && b > 0) {
+    console.log(`Разность "a" и "b": ${a - b}`);
+  } else if (a < 0 && b < 0) {
+    console.log(`Произведение "a" и "b": ${a * b}`);
+  } else if (a * b < 0) {
+    console.log(`Сумма "a" и "b": ${a + b}`);
   }
+  
 
 </script>
 </body>

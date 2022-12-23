@@ -28,6 +28,7 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
   /**
    * @param {number} max - максимальное значение для псевдослучайного числа,
    * должно быть целым положительным, по умолчанию max = 1000.
+   * @return {number} - возвращает псевдослучайное число от нуля до max.
    * @description - возвращает псевдослучайное число от нуля до max. Может
    * быть вызвана без аргументов (без аргументов вернет от 0 до 1000). 
    */
@@ -44,16 +45,19 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
    * @Param {string} five - склонение слова во множественном числе с падежным 
    * окончанием, соответствущим словосочетанию с числительным "пять", например
    * (пять стульев, пять деревяшек и т.д.)
+   * @return {string} - Возвращает сколнение слова.
    * @description Возвращает сколнение слова, в зависимости от введенного числа
    * в качестве первого аргумента. Если число задано неверно - вернет NaN.
    */
   function declinationOfNumber(count, one, two, five) {
-    if (count && count % 1 === 0) {
-      if (count >= 11 && count <= 14) {
-        return five
-      } else if (count % 10 === 1) {
+    const dozen = count % 10;
+    const hundreds = count % 100;
+    if (Number.isInteger(count) && count > 0) {
+      if (hundreds >= 11 && hundreds <= 14) {
+        return five;
+      } else if (dozen === 1) {
         return one;
-      } else if (count % 10 >= 2 && count % 10 < 5) {
+      } else if (dozen >= 2 && dozen < 5) {
         return two;
       } else {
         return five;
@@ -63,7 +67,7 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
     }
   }
 
-  let thingsNumber = getRandomInt();
+  let thingsNumber = 311; //getRandomInt();
   let word = declinationOfNumber(thingsNumber, "cкамейка", "скамейки", 
   "скамеек");
  

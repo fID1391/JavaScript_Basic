@@ -35,6 +35,7 @@ Infinity делать не нужно, однако, в случае если б
   /**
    * @param {number} a - Первое число
    * @param {number} b - Второе число
+   * @return {number} - возвращает сумму двух чисел
    * @description Сложение двух чисел
    */
   function add(a, b) {
@@ -44,30 +45,33 @@ Infinity делать не нужно, однако, в случае если б
   /**
    * @param {number} a - Первое число
    * @param {number} b - Второе число
+   * @return {number} - возвращает разность двух чисел
    * @description Разность двух чисел
    */
   function subtract(a, b) {
     return (a >= b) 
       ? a - b
-      : b - a
+      : b - a;
   }
 
   /**
    * @param {number} a - Первое число
    * @param {number} b - Второе число
+   * @return {number} - возвращает произведение двух чисел
    * @description Умножение двух чисел
    */
   function multiply(a, b) {
-    return a * b
+    return a * b;
   }
 
   /**
    * @param {number} a - Первое число
    * @param {number} b - Второе число
+   * @return {number} - возвращает частное двух чисел
    * @description Деление числа 'a' на число 'b'
    */
   function divide(a, b) {
-    return a / b
+    return a / b;
   }
 
   /**
@@ -75,8 +79,9 @@ Infinity делать не нужно, однако, в случае если б
    * @param {number} b - Второе число
    * @param {string} c - текстовый символ математической операции, допускаются:
    * "+", "-", "*", "/"
+   * @return {number} - Возвращает результат математической операции
    * @description Возвращает результат математической операции, задаваемой в
-   * третем аргументе, над числами в первых двух аргументах.
+   * третьем аргументе, над числами в первых двух аргументах.
    */
   function mathOperation(a, b, c) {
     switch(c) {
@@ -89,9 +94,8 @@ Infinity делать не нужно, однако, в случае если б
       case "/":
         return divide(a, b);
       default:
-        return NaN 
+        return NaN; 
     }
-
   }
 
   //проверка

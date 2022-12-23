@@ -25,21 +25,53 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
 <script>
   "use strict";
 
-  function declinationOfNumber(count, one, two, five) {
-
+  /**
+   * @param {number} max - максимальное значение для псевдослучайного числа,
+   * должно быть целым положительным, по умолчанию max = 1000.
+   * @description - возвращает псевдослучайное число от нуля до max. Может
+   * быть вызвана без аргументов (без аргументов вернет от 0 до 1000). 
+   */
+  function getRandomInt(max = 1000) {
+  return Math.floor(Math.random() * max);
   }
 
-  // Число яблок, можно пробовать поставить свое целое, положительное число.
-  const applesNumber = 5;
-  // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
-  const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
-  // Выводим корректную строку, например:
-  // "У меня есть 1 яблоко."
-  // "У меня есть 2 яблока."
-  // "У меня есть 5 яблок."
-  // При любом целом, положительном числе в applesNumber, строка, которая
-  // выводится в console.log, должна иметь правильное склонение слова "яблоко".
-  console.log(`У меня есть ${applesNumber} ${word}.`);
+  /**
+   * @Param {number} count - целое положетельное число
+   * @Param {string} one - склонение слова в единственном числе
+   * @Param {string} two - склонение слова во множественном числе с падежным 
+   * окончанием соответствующим словосочетанию с числительным "два", например 
+   * (два стула, два цветка и т.д.)
+   * @Param {string} five - склонение слова во множественном числе с падежным 
+   * окончанием, соответствущим словосочетанию с числительным "пять", например
+   * (пять стульев, пять деревяшек и т.д.)
+   * @description Возвращает сколнение слова, в зависимости от введенного числа
+   * в качестве первого аргумента. Если число задано неверно - вернет NaN.
+   */
+  function declinationOfNumber(count, one, two, five) {
+    if (count && count % 1 === 0) {
+      if (count >= 11 && count <= 14) {
+        return five
+      } else if (count % 10 === 1) {
+        return one;
+      } else if (count % 10 >= 2 && count % 10 < 5) {
+        return two;
+      } else {
+        return five;
+      }
+    } else {
+      return NaN;
+    }
+  }
+
+  let thingsNumber = getRandomInt();
+  let word = declinationOfNumber(thingsNumber, "cкамейка", "скамейки", 
+  "скамеек");
+ 
+  console.log(`У меня есть ${thingsNumber} ${word}.`);
+  word = declinationOfNumber(thingsNumber, "якорь", "якоря", 
+  "якорей");
+
+  console.log(`У меня есть ${thingsNumber} ${word}.`);
 
 </script>
 </body>

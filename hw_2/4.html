@@ -31,7 +31,50 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  /**
+   * @param {number} a - Первое число
+   * @param {number} b - Второе число
+   * @description Сложение двух чисел
+   */
+  function add(a, b) {
+    return a + b;
+  }
+
+  /**
+   * @param {number} a - Первое число
+   * @param {number} b - Второе число
+   * @description Разность двух чисел
+   */
+  function subtract(a, b) {
+    return (a >= b) 
+      ? a - b
+      : b - a
+  }
+
+  /**
+   * @param {number} a - Первое число
+   * @param {number} b - Второе число
+   * @description Умножение двух чисел
+   */
+  function multiply(a, b) {
+    return a * b
+  }
+
+  /**
+   * @param {number} a - Первое число
+   * @param {number} b - Второе число
+   * @description Деление числа 'a' на число 'b'
+   */
+  function divide(a, b) {
+    return a / b
+  }
+
+  // Проверка
+  console.log(add(10, 15));
+  console.log(subtract(-5, -7));
+  console.log(multiply(10, 5));
+  console.log(divide(25, 5));
+
 </script>
 </body>
 </html>

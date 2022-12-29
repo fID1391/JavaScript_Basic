@@ -50,15 +50,7 @@
   console.log(productsWithPhotos);
   
   // 2. отсортированный массив
-  products.sort(function(product1, product2) {
-    if (product2?.price > product1?.price) {
-      return -1;
-    }
-    if (product2?.price < product2?.price) {
-      return 1;
-    }
-    return 0;
-  });
+  products.sort((a, b) => a.price - b.price);
   console.log(products);
 </script>
 </body>

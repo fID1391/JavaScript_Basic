@@ -44,17 +44,16 @@
     let myObject = {};
     if (!Number.isInteger(number)) {
       console.error("Введено нецелое число")
-      return myObject;
-     } else if (!(number >= 0 && number < 1000)) {
+      return {};
+    } else if (!(number >= 0 && number < 1000)) {
       console.error("Введённое число не попадает в диапазон от 0 до 1000");
-      return myObject;
-     }
-    myObject = {
+      return {};
+    }
+    return {
       "units": number % 10,
       "dozens": (Math.trunc(number / 10)) % 10,
       "hundreds": (Math.trunc(number / 100)) % 10,
-      }
-    return myObject
+    }
   }
   
   const testObject = getDigitsOfNumber(543);

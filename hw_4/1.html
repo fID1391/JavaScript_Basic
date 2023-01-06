@@ -27,9 +27,7 @@
 
   ProductES5.prototype.make25Discount = function() {
     this.price = this.price * 0.75;
-    console.log(`К продукту ${this.name} применена скидка в 25%, теперь он`  +
-    ` стоит ${this.price} рублей`); 
-  }
+  };
 
   class ProductES6 {
     constructor(name, price) {
@@ -39,8 +37,6 @@
 
     make25Discount() {
     this.price = this.price * 0.75;
-    console.log(`К продукту ${this.name} применена скидка в 25%, теперь он`  +
-    ` стоит ${this.price} рублей`);
     }
   }
 

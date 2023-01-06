@@ -53,15 +53,13 @@
   function PostES5(authorName, textOfPost) {
     this.authorsName = authorName;
     this.textOfPost = textOfPost;
-    this.editedAt = new Date().toLocaleString();
+    this.editedAt = new Date();
   }
 
   PostES5.prototype.edit = function(editedText) {
     this.textOfPost = editedText;
-    this.editedAt = new Date().toLocaleString();
-    console.log(`Post by \"${this.authorsName}\" edited at: ${this.editedAt}` +
-      `\n---\n${this.textOfPost}\n---`);
-  }
+    this.editedAt = new Date();
+  };
 
   const helloWorld = new PostES5("Ilya", "Привет, МИР!")
   console.log(helloWorld);
@@ -71,17 +69,13 @@
     constructor (authorsName, textOfPost) {
       this.authorsName = authorsName;
       this.textOfPost = textOfPost;
-      this.editedAt = new Date().toLocaleString();
+      this.editedAt = new Date();
     }
 
     edit(textOfPost) {
       this.textOfPost = textOfPost;
-      this.editedAt = new Date().toLocaleString();
-      console.log(`Post by \"${this.authorsName}\" ` + 
-        `edited at: ${this.editedAt}` +
-        `\n---\n${this.textOfPost}\n---`);
+      this.editedAt = new Date();
     }
-
   }
 
   const helloWorld2 = new PostES6("iLYA", "HeLlO wOrLd");
@@ -97,7 +91,7 @@
   AttachedPostES5.prototype.constructor = AttachedPostES5;
   AttachedPostES5.prototype.makeTextHighlighted = function () {
     this.highlighted = true;
-  }
+  };
 
   const testAttachedPost = new AttachedPostES5("Fed", "someText");
   console.log(testAttachedPost);
@@ -105,14 +99,12 @@
   console.log(testAttachedPost);
 
   class AttachedPostES6 extends PostES6 {
-    constructor(authorName, textOfPost) {
-      super(authorName, textOfPost);
-      this.highlighted = false;
-    }
-    
+    highlighted = false;
+
     makeTextHighlighted() {
       this.highlighted = true;
-    }
+      this.editedAt = new Date();
+      }
   }
 
   const testAttachedPost2 = new AttachedPostES6("someName", "someText2");
